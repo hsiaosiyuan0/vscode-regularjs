@@ -9,7 +9,9 @@ const tpl = `
 <!-- @regular -->
 <div>
 {#if result.length > 0 }
-  <div v-model={message} style={{color: 'red'}} some-v={a + b + '1' + `${c}`}>
+  <div 
+    v-model={message} style={{color: 'red'}} 
+    some-v={a + b + '1' + `${c}`}>
 {/if}
 </div>
 `
