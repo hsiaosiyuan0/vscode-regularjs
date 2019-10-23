@@ -1,0 +1,99 @@
+{
+  "name": "regularjs",
+  "displayName": "Regularjs",
+  "description": "VSCode extension for Regularjs",
+  "version": "0.0.1",
+  "author": "Hsiao Siyuan <hsiaosiyuan0@outlook.com>",
+  "publisher": "hsiaosiyuan",
+  "icon": "assets/regularjs.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hsiaosiyuan0/vscode-regularjs.git"
+  },
+  "keywords": [
+    "regular",
+    "regularjs"
+  ],
+  "engines": {
+    "vscode": "^1.39.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:extension.regularjs"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "regularjs",
+        "aliases": [
+          "Regularjs"
+        ],
+        "extensions": [
+          ".rgl"
+        ],
+        "configuration": "./languages/regularjs-language-configuration.json"
+      },
+      {
+        "id": "regularjs-html",
+        "aliases": [
+          "Regularjs-html"
+        ],
+        "configuration": "./languages/regularjs-html-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "regularjs",
+        "scopeName": "source.regularjs",
+        "path": "./syntaxes/regularjs.tmLanguage.json"
+      },
+      {
+        "language": "regularjs-html",
+        "scopeName": "text.html.regularjs-html",
+        "path": "./syntaxes/regularjs-html.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.js": "javascript"
+        }
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.ts",
+          "source.jsx",
+          "source.js.jsx",
+          "source.tsx"
+        ],
+        "scopeName": "regularjs-injection",
+        "path": "./syntaxes/regularjs-injection.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.css.scss": "css",
+          "meta.embedded.line.ts": "typescript"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "build:grammar": "tsc -p ./ && node out/scripts/build_grammar.js",
+    "compile": "tsc -p ./ && npm run build:grammar",
+    "watch": "npm run build:grammar && tsc -w -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/js-yaml": "^3.12.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/vscode": "^1.39.0",
+    "glob": "^7.1.4",
+    "js-yaml": "^3.13.1",
+    "mocha": "^6.1.4",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "vscode-test": "^1.2.0"
+  }
+}

@@ -1,0 +1,18 @@
+name: Regularjs Component
+scopeName: source.regularjs
+patterns:
+  - include: source.regularjs#regularjs-interpolations
+repository:
+  regularjs-interpolations:
+    patterns:
+      - name: expression.embedded.regularjs
+        begin: \{(?:(#|\/)(\w+))?
+        beginCaptures:
+          "0": { name: punctuation.section.embedded.begin.js.jsx }
+          "1": { name: keyword.operator.arithmetic.js }
+          "2": { name: keyword.control.js.jsx }
+        end: \}
+        endCaptures:
+          "0": { name: punctuation.section.embedded.end.js.jsx }
+        patterns:
+          - include: source.js#expression
