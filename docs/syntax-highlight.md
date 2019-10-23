@@ -17,4 +17,4 @@ const tpl = `
 
 the rendered result of above should be something like:
 
-<img src="https://github.com/hsiaosiyuan0/vscode-regularjs/blob/master/assets/syntax-highlight-inline.png" width="500" />
+<img src="https://github.com/hsiaosiyuan0/vscode-regularjs/blob/master/assets/syntax-highlight-inline.png" width="600" />
