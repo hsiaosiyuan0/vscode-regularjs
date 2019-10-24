@@ -3,8 +3,7 @@ injectionSelector: L:source -comment -string
 scopeName: "regularjs-injection"
 patterns:
   - contentName: string.template.regularjs
-    begin: >-
-      [=:]\s*`
+    begin: "`"
     beginCaptures:
       "0":
         name: punctuation.definition.string.template.begin.js string.template.js
