@@ -138,12 +138,15 @@ repository:
       "0": { name: punctuation.definition.string.end.html }
     patterns:
       - include: "#entities"
+  tag-boolean-attribute:
+    name: entity.other.attribute-name.html
+    match: (?<=[^=])\b([a-zA-Z0-9:\-_]+)
   tag-attribute:
     name: meta.attribute-with-value.id.html
     begin: \b([a-zA-Z0-9:\-_]+)\b\s*(=)
     end: (?!\G)(?<='|"\}|[^\s<>/])
     captures:
-      # use `js.jsx` stuff to inherit colors from other themes built for js
+      # use `js` stuff to inherit colors from other themes built for js
       "1": { name: entity.other.attribute-name.js }
       "2": { name: keyword.operator.assignment.js }
     patterns:
@@ -157,6 +160,7 @@ repository:
     patterns:
       - include: "source.regularjs#regularjs-interpolations"
       - include: "#tag-attribute"
+      - include: "#tag-boolean-attribute"
       - include: "#string-double-quoted"
       - include: "#string-single-quoted"
       - include: "#unquoted-attribute"
