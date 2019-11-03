@@ -93,7 +93,7 @@ patterns:
       "1": { name: punctuation.definition.tag.end.html }
     patterns:
       - include: "#tag-stuff"
-  - name: meta.tag.other.html
+  - name: entity.other.attribute-name.js
     begin: (</?)([a-zA-Z0-9:-]+)
     beginCaptures:
       "1": { name: punctuation.definition.tag.begin.html }

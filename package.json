@@ -2,7 +2,7 @@
   "name": "regularjs",
   "displayName": "Regularjs",
   "description": "VSCode extension for Regularjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Hsiao Siyuan <hsiaosiyuan0@outlook.com>",
   "publisher": "hsiaosiyuan",
   "icon": "assets/regularjs.png",
@@ -21,9 +21,9 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onLanguage:extension.regularjs"
+    "onLanguage:javascript"
   ],
-  "main": "./out/extension.js",
+  "main": "./out/client/extension.js",
   "contributes": {
     "languages": [
       {
@@ -95,5 +95,8 @@
     "tslint": "^5.12.1",
     "typescript": "^3.3.1",
     "vscode-test": "^1.2.0"
+  },
+  "dependencies": {
+    "regularjs-beautify": "0.0.4"
   }
 }

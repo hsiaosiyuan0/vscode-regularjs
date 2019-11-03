@@ -7,7 +7,7 @@ VSCode extension for [Regularjs](https://github.com/regularjs/regular)
 - [ ] Syntax highlight
   - [x] [Inline template](docs/syntax-highlight.md)
   - [ ] Single file component
-- [ ] Code format
+- [x] Code format
 
 ## Extension Settings
 
