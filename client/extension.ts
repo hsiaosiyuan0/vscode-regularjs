@@ -12,10 +12,16 @@ export function activate(_: vscode.ExtensionContext) {
       range: vscode.Range
     ): vscode.TextEdit[] {
       const code = document.getText(range);
+      const space = code.match(/^\s*/);
+      let indent = 2;
+      if (space && space[0]) {
+        indent = space[0].length & ~1;
+      }
       const formatter = new Formatter(
         code,
         document.fileName,
-        range.start.line
+        range.start.line,
+        { baseIndent: indent, printWidth: 80 }
       );
       return [vscode.TextEdit.replace(range, formatter.run())];
     }
