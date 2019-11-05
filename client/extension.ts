@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import { Formatter } from "regularjs-beautify";
+import { Formatter, LocatableError } from "regularjs-beautify";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -28,10 +28,10 @@ export function activate(_: vscode.ExtensionContext) {
         return [vscode.TextEdit.replace(range, output)];
       } catch (e) {
         vscode.window.showErrorMessage(e.message, "goto").then(item => {
-          if (item === "goto") {
+          if (item === "goto" && e instanceof LocatableError) {
             const editor = vscode.window.activeTextEditor;
             if (editor) {
-              const range = editor.document.lineAt(lineNumber - 1).range;
+              const range = editor.document.lineAt(e.loc.start.line - 1).range;
               editor.selection = new vscode.Selection(range.start, range.end);
               editor.revealRange(range);
             }
