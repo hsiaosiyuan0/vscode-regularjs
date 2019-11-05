@@ -97,6 +97,6 @@
     "vscode-test": "^1.2.0"
   },
   "dependencies": {
-    "regularjs-beautify": "0.0.7"
+    "regularjs-beautify": "0.0.9"
   }
 }

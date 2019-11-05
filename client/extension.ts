@@ -20,14 +20,23 @@ export function activate(_: vscode.ExtensionContext) {
       const formatter = new Formatter(
         code,
         document.fileName,
-        range.start.line,
+        range.start.line + 1,
         { baseIndent: indent, printWidth: 80 }
       );
       try {
         const output = formatter.run();
         return [vscode.TextEdit.replace(range, output)];
       } catch (e) {
-        vscode.window.showErrorMessage(e.message);
+        vscode.window.showErrorMessage(e.message, "goto").then(item => {
+          if (item === "goto") {
+            const editor = vscode.window.activeTextEditor;
+            if (editor) {
+              const range = editor.document.lineAt(lineNumber - 1).range;
+              editor.selection = new vscode.Selection(range.start, range.end);
+              editor.revealRange(range);
+            }
+          }
+        });
       }
       return [];
     }
