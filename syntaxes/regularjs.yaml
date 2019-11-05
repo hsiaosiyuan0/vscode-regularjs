@@ -3,6 +3,18 @@ scopeName: source.regularjs
 patterns:
   - include: source.regularjs#regularjs-interpolations
 repository:
+  object-literal:
+    name: meta.objectliteral.js
+    begin: \{
+    beginCaptures:
+      "0": { name: punctuation.definition.block.js }
+    end: (\}|(?=[<`]))
+    endCaptures:
+      "0": { name: punctuation.definition.block.js }
+    patterns:
+      - include: source.js#qstring-single
+      - include: source.js#qstring-double
+      - include: source.js#identifiers
   regularjs-interpolations:
     patterns:
       - name: expression.embedded.regularjs
@@ -11,8 +23,20 @@ repository:
           "0": { name: punctuation.section.embedded.begin.js.jsx }
           "1": { name: keyword.operator.arithmetic.js }
           "2": { name: keyword.control.js.jsx }
-        end: \}
+        end: (\}|(?=[<`]))
         endCaptures:
           "0": { name: punctuation.section.embedded.end.js.jsx }
         patterns:
-          - include: source.js#expression
+          - include: source.js#qstring-single
+          - include: source.js#qstring-double
+          - include: source.js#function-expression
+          - include: source.js#arrow-function
+          - include: source.js#paren-expression-possibly-arrow
+          - include: source.js#ternary-expression
+          - include: source.regularjs#object-literal
+          - include: source.js#expression-operators
+          - include: source.js#function-call
+          - include: source.js#literal
+          - include: source.js#support-objects
+          - include: source.js#paren-expression
+          - include: source.js#identifiers

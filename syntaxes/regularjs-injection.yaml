@@ -12,7 +12,7 @@ patterns:
       "0":
         name: punctuation.definition.string.template.end.js string.template.js
     patterns:
-      - begin: (?=(<([^>])*>?)|(\{#?[^}]+\}?))
+      - begin: (?=(<([^>])*>?)|(\{#[^}]+\}?))
         end: (?=`)
         patterns:
           - include: text.html.regularjs-html
