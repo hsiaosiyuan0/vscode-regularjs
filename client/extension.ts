@@ -23,7 +23,13 @@ export function activate(_: vscode.ExtensionContext) {
         range.start.line,
         { baseIndent: indent, printWidth: 80 }
       );
-      return [vscode.TextEdit.replace(range, formatter.run())];
+      try {
+        const output = formatter.run();
+        return [vscode.TextEdit.replace(range, output)];
+      } catch (e) {
+        vscode.window.showErrorMessage(e.message);
+      }
+      return [];
     }
   });
 }
