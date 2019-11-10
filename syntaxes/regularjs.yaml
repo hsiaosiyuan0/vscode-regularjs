@@ -3,18 +3,6 @@ scopeName: source.regularjs
 patterns:
   - include: source.regularjs#regularjs-interpolations
 repository:
-  # object-literal:
-  #   name: meta.objectliteral.js
-  #   begin: \{
-  #   beginCaptures:
-  #     "0": { name: punctuation.definition.block.js }
-  #   end: (\}|(?=[<`]))
-  #   endCaptures:
-  #     "0": { name: punctuation.definition.block.js }
-  #   patterns:
-  #     - include: source.js#qstring-single
-  #     - include: source.js#qstring-double
-  #     - include: source.js#identifiers
   regularjs-interpolations:
     patterns:
       - name: meta.template.expression.regularjs
