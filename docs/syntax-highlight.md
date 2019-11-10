@@ -1,8 +1,6 @@
-# Syntax highlight
+# Inline template
 
-## Inline template
-
-For enabling syntax highlight for those inline templates, we have to add specific comments at the beginning of those template to indicate the remaining content are the template of Regularjs, for example:
+For enabling syntax highlight and code formatting, you have to add specific comment at the top of each template to indicate they are the template of Regularjs, for example:
 
 ```js
 const tpl = `
@@ -17,6 +15,6 @@ const tpl = `
 `
 ```
 
-the rendered result of above should be something like:
+the rendered result of above will be something like:
 
 <img src="https://github.com/hsiaosiyuan0/vscode-regularjs/blob/master/assets/syntax-highlight-inline.png" width="600" />
