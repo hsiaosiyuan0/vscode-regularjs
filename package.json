@@ -2,7 +2,7 @@
   "name": "regularjs",
   "displayName": "Regularjs",
   "description": "VSCode extension for Regularjs",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": "Hsiao Siyuan <hsiaosiyuan0@outlook.com>",
   "publisher": "hsiaosiyuan",
   "icon": "assets/regularjs.png",
@@ -97,6 +97,6 @@
     "vscode-test": "^1.2.0"
   },
   "dependencies": {
-    "regularjs-beautify": "0.0.11"
+    "regularjs-beautify-core": "0.0.4"
   }
 }
