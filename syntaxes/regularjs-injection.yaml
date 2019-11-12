@@ -17,7 +17,7 @@ patterns:
           "1": { name: "punctuation.definition.comment.html" }
           "2": { name: storage.type.class.jsdoc }
           "3": { name: "punctuation.definition.comment.html" }
-        end: (?=`)
+        end: (?=[^\\]`)
         patterns:
           - include: text.html.regularjs-html
       - include: source.js#template-substitution-element
