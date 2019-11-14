@@ -10,7 +10,7 @@ repository:
         beginCaptures:
           "1": { name: punctuation.section.embedded.begin.js.jsx }
           "2": { name: keyword.control.js.jsx }
-        end: (\}|(?=[<`]))
+        end: (\}|(?=[<`;])|(?=$))
         endCaptures:
           "0": { name: punctuation.section.embedded.end.js.jsx }
         patterns:

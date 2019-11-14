@@ -2,7 +2,7 @@
   "name": "regularjs",
   "displayName": "Regularjs",
   "description": "VSCode extension for Regularjs",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "author": "Hsiao Siyuan <hsiaosiyuan0@outlook.com>",
   "publisher": "hsiaosiyuan",
   "icon": "assets/regularjs.png",
