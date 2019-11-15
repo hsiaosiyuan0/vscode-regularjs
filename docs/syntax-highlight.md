@@ -1,6 +1,6 @@
-# Inline template
+# Syntax highlight
 
-For enabling syntax highlight and code formatting, you have to add specific comment at the top of each template to indicate they are the template of Regularjs, for example:
+For enabling syntax highlight and code formatting, you have to add specific comment at the top of each template to indicate they are the templates of Regularjs, for example:
 
 ```js
 const tpl = `
