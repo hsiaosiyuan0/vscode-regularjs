@@ -15,7 +15,7 @@ const tpl = `
 `
 ```
 
-> It maybe odd that we have to put the html comment at the top of each template, let's give it a little bit explanation. Suppose we are at the viewpoint of the plugin, there is no information for us to tell the string is a normal string or a specific one being used as Regularjs template, thus we cannot give user the exacter lint reports. So the comment is used to ask the user to indicate their intents more clearly thus to help the plugin to tell the difference between the normal string and the regularjs one.
+> It maybe odd that we have to put the html comment at the top of each template, let's give it a little bit explanation. Suppose we are at the viewpoint of the plugin, there is no information for us to tell the string is a normal string or a specific one being used as Regularjs template, thus we cannot give users the exact lint reports. So the comment is used to ask the users to indicate their intents more clearly thus to help the plugin to tell the difference between the normal string and the regularjs one.
 
 the rendered result of above will be something like:
 
