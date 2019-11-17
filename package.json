@@ -2,7 +2,7 @@
   "name": "regularjs",
   "displayName": "Regularjs",
   "description": "VSCode extension for Regularjs",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "author": "Hsiao Siyuan <hsiaosiyuan0@outlook.com>",
   "publisher": "hsiaosiyuan",
   "icon": "assets/regularjs.png",
@@ -87,17 +87,17 @@
     "@types/glob": "^7.1.1",
     "@types/js-yaml": "^3.12.1",
     "@types/mocha": "^5.2.6",
-    "@types/node": "^10.12.21",
-    "@types/vscode": "^1.39.0",
-    "glob": "^7.1.4",
+    "@types/node": "^10.17.5",
+    "@types/vscode": "^1.40.0",
+    "glob": "^7.1.6",
     "js-yaml": "^3.13.1",
     "mocha": "^6.1.4",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.1",
-    "vscode-test": "^1.2.0"
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2",
+    "vscode-test": "^1.2.3"
   },
   "dependencies": {
-    "regularjs-beautify-core": "0.0.6",
-    "regularjs-beautify-dozen": "0.0.10"
+    "regularjs-beautify-core": "^0.0.7",
+    "regularjs-beautify-dozen": "^0.0.11"
   }
 }
