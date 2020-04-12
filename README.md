@@ -10,6 +10,7 @@
 - [x] 代码格式化 [more](docs/code-format.md)
 - [x] 标签折叠
 - [x] Emmet 便签 [more](docs/emmet.md)
+- [ ] 标签补全
 - [ ] 支持 .rgl 文件
 
 ## Release Notes
