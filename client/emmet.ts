@@ -1,6 +1,21 @@
 import * as vscode from "vscode";
 import expand from "emmet";
 
+// 补全功能可以通过 [registerCompletionItemProvider](https://code.visualstudio.com/api/references/vscode-api#2771)
+// 向 VSCode 注册一个具有补全功能的 Provider，并提供预期的 triggerCharacters，当用户输入命中了 triggerCharacters 时会由 VSCode
+// 内部逻辑自动调用之前提供的 Provider 相关功能
+
+// 按下 tab 进行补全的功能，实现方式与上述方案完全不同，所以为了以后可以快速区分这两个功能
+// 最好使用「补全」和「展开」来进一步区分两者
+
+//「展开」的功能，需要经过这几步来实现：
+// 1. 插件需要能够使得自身预先被 VSCode 激活，比如通过 `activationEvents` 来声明
+// 2. 插件需要注册一个用于表示展开的命令，通过 `vscode.commands.registerCommand`
+// 3. 在 `keybindings` 中声明将 tab 键绑定到上一步注册的命令
+
+// 这样在用户输入 tab 的时候，就会由 VSCode 根据按键绑定自动调用到插件代码，插件逻辑将被一个事件绑定函数的回调所唤起
+// 在这个回调的参数中没有携带任何上下文信息，因此需要借助挂于 vscode 对象上的方法获取相应所需的信息
+
 export const allowedLangIds = [
   "javascript",
   "javascriptreact",
