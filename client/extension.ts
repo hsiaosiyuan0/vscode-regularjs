@@ -3,6 +3,7 @@
 import * as vscode from "vscode";
 import { Formatter, LocatableError } from "regularjs-beautify-core";
 import { format, scan } from "regularjs-beautify-dozen";
+import { expandEmmet } from "./emmet";
 
 const handleError = (e: Error) => {
   if (e instanceof LocatableError) {
@@ -44,7 +45,7 @@ vscode.languages.registerDocumentRangeFormattingEditProvider("javascript", {
       handleError(e);
     }
     return [];
-  }
+  },
 });
 
 // format whole file
@@ -54,7 +55,7 @@ vscode.languages.registerDocumentFormattingEditProvider("javascript", {
   ): vscode.ProviderResult<vscode.TextEdit[]> {
     try {
       const code = document.getText();
-      const cooked = format("", code);
+      const cooked = format(document.fileName, code);
       const range = new vscode.Range(
         document.positionAt(0),
         document.positionAt(code.length)
@@ -64,7 +65,7 @@ vscode.languages.registerDocumentFormattingEditProvider("javascript", {
       handleError(e);
     }
     return [];
-  }
+  },
 });
 
 // folding
@@ -77,15 +78,21 @@ vscode.languages.registerFoldingRangeProvider("javascript", {
     return ranges
       .map(([start, end]) => ({
         start: start - 1,
-        end: end - 1
+        end: end - 1,
       }))
-      .filter(r => r.start !== r.end);
-  }
+      .filter((r) => r.start !== r.end);
+  },
 });
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-export function activate(_: vscode.ExtensionContext) {}
+export function activate(ctx: vscode.ExtensionContext) {
+  ctx.subscriptions.push(
+    vscode.commands.registerCommand("regularjs.expandEmmet", () => {
+      expandEmmet();
+    })
+  );
+}
 
 // this method is called when your extension is deactivated
 export function deactivate() {}

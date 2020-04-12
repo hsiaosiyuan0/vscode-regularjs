@@ -12,7 +12,8 @@
     "noUnusedParameters": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", ".vscode-test"],
   "include": ["client/**/*.ts", "test/**/*.ts", "scripts/**/*.ts"]

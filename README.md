@@ -1,14 +1,16 @@
-# VSCode-regularjs 
+# VSCode-regularjs
 
-VSCode extension for [Regularjs](https://github.com/regularjs/regular). 
+方便 [Regularjs](https://github.com/regularjs/regular) 开发的 VSCode 插件
 
-This extension **requires** you to write template in [inline style](docs/syntax-highlight.md).
+插件目前要求模板**必须**为内联的形式: [inline style](docs/syntax-highlight.md)
 
 ## Features
 
-- [x] Syntax highlight, [more](docs/syntax-highlight.md)
-- [x] Code format, [more](docs/code-format.md)
-- [x] Folding elements in template
+- [x] 语法高亮 [more](docs/syntax-highlight.md)
+- [x] 代码格式化 [more](docs/code-format.md)
+- [x] 标签折叠
+- [x] Emmet 便签
+- [ ] 支持 .rgl 文件
 
 ## Release Notes
 
