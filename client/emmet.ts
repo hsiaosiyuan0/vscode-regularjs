@@ -74,7 +74,7 @@ export function expandEmmet(): Thenable<boolean | undefined> {
   }
 
   const abbr = extractAbbr(activeEditor.document, anchor);
-  if (!/^[a-zA-Z0-9_\-*>=\[\]|'"]+$/.test(abbr.text)) {
+  if (!/^[a-zA-Z0-9_\-*>=\[\]|'"+]+$/.test(abbr.text)) {
     return fallbackTab();
   }
 
