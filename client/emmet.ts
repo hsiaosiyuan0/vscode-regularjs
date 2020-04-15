@@ -45,8 +45,8 @@ function extractAbbr(doc: vscode.TextDocument, pos: vscode.Position) {
   do {
     start = start.translate(0, -1);
     ch = doc.getText(new vscode.Range(start, start.translate(0, 1)));
-  } while (ch !== "" && ch !== " " && ch !== "\t");
-  if (ch !== "") {
+  } while (ch !== "" && ch !== " " && ch !== "\t" && start.character !== 0);
+  if (ch !== "" && start.character !== 0) {
     start = start.translate(0, 1);
   }
   const range = new vscode.Range(start, pos);
@@ -89,7 +89,7 @@ export function expandEmmet(): Thenable<boolean | undefined> {
   }
 
   const abbr = extractAbbr(activeEditor.document, anchor);
-  if (!/^[a-zA-Z0-9_\-*>=\[\]|'"+]+$/.test(abbr.text)) {
+  if (!/^[a-zA-Z0-9_\-*>=\[\]|'"+.]+$/.test(abbr.text)) {
     return fallbackTab();
   }
 

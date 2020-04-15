@@ -73,14 +73,18 @@ vscode.languages.registerFoldingRangeProvider("javascript", {
   provideFoldingRanges(
     document: vscode.TextDocument
   ): vscode.ProviderResult<vscode.FoldingRange[]> {
-    const code = document.getText();
-    const ranges = scan(code);
-    return ranges
-      .map(([start, end]) => ({
-        start: start - 1,
-        end: end - 1,
-      }))
-      .filter((r) => r.start !== r.end);
+    try {
+      const code = document.getText();
+      const ranges = scan(code);
+      return ranges
+        .map(([start, end]) => ({
+          start: start - 1,
+          end: end - 1,
+        }))
+        .filter((r) => r.start !== r.end);
+    } catch (error) {
+      return [];
+    }
   },
 });
 

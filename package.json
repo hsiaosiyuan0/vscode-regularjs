@@ -21,6 +21,7 @@
     "Programming Languages"
   ],
   "activationEvents": [
+    "*",
     "onLanguage:regularjs",
     "onLanguage:javascript"
   ],
